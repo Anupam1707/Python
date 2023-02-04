@@ -47,6 +47,18 @@ values = sorted(dt.values())
 print("Sorted:","\n",values)
 print()
 
+#to input N numbers from the user. Store these numbers in a tuple.
+#Print Maximum and minimum number from this tuple
+print("Min Max from Tuple")
+n = int(input("Enter the number of elements "))
+numbers = ()
+for i in range(n):
+    v = int(input(f"Enter number {i+1} :"))
+    numbers += (v,)
+print()
+print("Maximum Number from the above is",max(numbers))
+print("Minimum Number from the above is",min(numbers))
+
 ##Output
 ###Creating a dictionary
 ##Enter Name, Age, Country, Language
@@ -79,3 +91,14 @@ print()
 ###Sort the dictionary by values and display the result.
 ##Sorted: 
 ## ['16', 'Anupam', 'India', 'Male']
+##
+##Min Max from Tuple
+##Enter the number of elements 5
+##Enter number 1 :5
+##Enter number 2 :6
+##Enter number 3 :4
+##Enter number 4 :34
+##Enter number 5 :54
+##
+##Maximum Number from the above is 54
+##Minimum Number from the above is 4
