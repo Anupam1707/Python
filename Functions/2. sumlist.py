@@ -1,4 +1,4 @@
-#To sum up the elements of a list
+#To sum up the elements of a list using a function
 #sumlist.py
 #23-3-23
 #By Anupam Kanoongo
