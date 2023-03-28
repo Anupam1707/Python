@@ -20,7 +20,7 @@ def pascal(n):
     for i in range(n):
 
         for a in range(n - len(row)):
-            print(" ", end = " ")
+            print(" ", end = "")
             
         print(*row)
 
