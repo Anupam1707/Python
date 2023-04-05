@@ -1,5 +1,4 @@
 import requests
-from github import Github
 
 url1 = "https://raw.githubusercontent.com/Anupam1707/Python/main/"
 url2 = "https://raw.githubusercontent.com/Anupam1707/weather-app-py/main/"
