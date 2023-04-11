@@ -2,7 +2,7 @@ import requests
 
 url1 = "https://raw.githubusercontent.com/Anupam1707/Python/main/"
 url2 = "https://raw.githubusercontent.com/Anupam1707/weather-app-py/main/"
-url3 = "https://raw.githubusercontent.com/Anupam1707/AI_Assistant/main/main.py"
+url3 = "https://raw.githubusercontent.com/Anupam1707/ai/main/main.py"
 
 def python(name):
     page = requests.get(url1 + name)
