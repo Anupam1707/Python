@@ -1,0 +1,2 @@
+I worked for a while for a (now defunct) search engine company whose middleware had been written 
+by an insane person (about 5000 Java source files) who had moved on. Some of the characteristics:
