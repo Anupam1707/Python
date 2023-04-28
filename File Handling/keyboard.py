@@ -12,11 +12,14 @@ def check():
         if inp.islower():
             with open("lower.txt", "a") as l:
                 l.write(inp)
+                l.write(" ")
         elif inp.isupper():
             with opne("upper.txt", "a") as u:
                 u.write(inp)
+                u.write(" ")
         else:
             with open("others.txt", "a") as o:
                 o.write(inp)
+                o.write(" ")
 
 check()
