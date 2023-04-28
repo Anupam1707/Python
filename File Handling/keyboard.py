@@ -8,7 +8,7 @@ import sys
 def check():
     inp = ""
     while inp == " ":
-        inp = sys.stdin.readline()
+        inp = input()
         if inp.islower():
             with open("lower.txt", "a") as l:
                 l.write(inp)
