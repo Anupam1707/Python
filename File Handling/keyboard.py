@@ -7,7 +7,7 @@ import sys
 
 def check():
     inp = ""
-    while inp == " ":
+    while inp != "":
         inp = input()
         if inp.islower():
             with open("lower.txt", "a") as l:
