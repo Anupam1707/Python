@@ -14,7 +14,7 @@ def check():
                 l.write(inp)
                 l.write(" ")
         elif inp.isupper():
-            with opne("upper.txt", "a") as u:
+            with open("upper.txt", "a") as u:
                 u.write(inp)
                 u.write(" ")
         else:
