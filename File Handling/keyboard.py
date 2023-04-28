@@ -6,7 +6,7 @@
 import sys
 
 def check():
-    inp = ""
+    inp = None
     while inp != "":
         inp = input()
         if inp.islower():
