@@ -22,3 +22,9 @@ def out():
     for i in range(len(d)):
         print(f"{i+1}\t\t{d[i].split()[0]}\t\t{d[i].split()[1]}\t\t{d[i].split()[2]}")
 
+def inpt():
+    name = str("Enter the Name : ")
+    phone = int(input("Enter the Phone Number : "))
+    eml = str(input("Enter the Email : "))
+    with open("contacts.txt","a") as i:
+        i.write(f"Name : {name} Phone : {phone} Email : {eml}\n\n")
