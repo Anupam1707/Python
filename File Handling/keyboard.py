@@ -5,7 +5,7 @@
 
 import sys
 
-def check(var):
+def check():
     inp = ""
     while inp == " ":
         inp = sys.stdin.readline()
