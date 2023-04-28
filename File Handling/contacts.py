@@ -18,4 +18,7 @@ def inp():
 def out():
     with open("contacts.txt", "r") as c:
         d = c.readlines()
-    
+    print("S.No\t\tName\t\tPhone\t\tEmail")
+    for i in range(len(d)):
+        print(f"{i+1}\t\t{d[i].split()[0]}\t\t{d[i].split()[1]}\t\t{d[i].split()[2]}")
+
