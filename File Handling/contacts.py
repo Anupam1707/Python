@@ -14,7 +14,7 @@ def inp():
                 phone = int(input("Enter the phone Number : "))
                 eml = str(input("Enter the Email : "))
                 c.write(f"{name} {phone} {eml}\n\n")
-print()
+                print()
 
 def out():
     with open("contacts.txt", "r") as c:
