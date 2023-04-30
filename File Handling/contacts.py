@@ -13,7 +13,8 @@ def inp():
             while name != "":
                 phone = int(input("Enter the phone Number : "))
                 eml = str(input("Enter the Email : "))
-                c.write(f"Name : {name} Phone : {phone} Email : {eml}\n\n")
+                c.write(f"{name} {phone} {eml}\n\n")
+print()
 
 def out():
     with open("contacts.txt", "r") as c:
