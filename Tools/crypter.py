@@ -2,14 +2,11 @@ def pwd(string, key):
     key = list(key) 
     if len(string) == len(key):
         return(key) 
-    elif len(string) > len(key):
+    else:
         for i in range(len(string) -len(key)):
             key.append(key[i % len(key)])
         return("" . join(key)) 
-    elif len(string) < len(key):
-        key = key[:len(string)-1]
-        return key
-    
+  
 def encrypt(string,password):
     string = string.upper() + " "
     key = pwd(string, password)
