@@ -29,3 +29,18 @@ def inpt():
     eml = str(input("Enter the Email : "))
     with open("contacts.txt","a") as i:
         i.write(f"Name : {name} Phone : {phone} Email : {eml}\n\n")
+        
+while True:
+    print("What do you want to do ?")
+    print("1. Add Multiple Contacts")
+    print("2. Display Contacts")
+    print("3. Add a Contact")
+    n = int(input("Enter a choice from the above"))
+    if n == 1:
+        inp()
+    elif n == 2:
+        out()
+    elif n == 3:
+        inpt()
+    else:
+        print("Invalid inputs")
