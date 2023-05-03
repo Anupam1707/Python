@@ -1,5 +1,9 @@
 def pwd(string, key):
     key = list(key) 
+    for i in range(len(key)):
+        x = (ord(key[i]) + 900)
+        key[i] = chr(x)
+        
     if len(string) == len(key):
         return(key) 
     elif len(string) > len(key):
