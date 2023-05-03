@@ -15,7 +15,7 @@ def encrypt(string,password):
     key = pwd(string, password)
     encrypt_text = []
     for i in range(len(string)):
-        x = (ord(string[i]) +ord(key[i]))
+        x = (ord(string[i]) +ord(key[i]) + 1000)
         encrypt_text.append(chr(x))
     encrypt_text = ("" . join(encrypt_text))
     key = ("".join(key))
@@ -27,7 +27,7 @@ def decrypt(encrypt_text):
     key = encrypt_text[b:]
     encrypt_text = encrypt_text[:b-1]
     for i in range(len(encrypt_text)):
-        x = (ord(encrypt_text[i]) -ord(key[i]))
+        x = (ord(encrypt_text[i]) -ord(key[i]) - 1000)
         orig_text.append(chr(x))
     orig_text = ("" . join(orig_text))
     return orig_text
