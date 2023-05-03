@@ -1,7 +1,7 @@
 def pwd(string, key):
     key = list(key) 
     for i in range(len(key)):
-        x = (ord(key[i]) + 800)
+        x = (ord(key[i]) + 200)
         key[i] = chr(x)
         
     if len(string) == len(key):
