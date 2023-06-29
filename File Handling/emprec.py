@@ -19,10 +19,8 @@ def search():
     eno = int(input("Enter the Employee Number : "))
     try:
         with open("EmpRec.bin","rb") as file:
-            data = pickle.load(file)
-            for rec in data:
-                if rec["No"] == eno:
-                    print(rec)
+          file.seek(eno)
+          data = pickle.load(file)
     except:
         pass
 def report():
