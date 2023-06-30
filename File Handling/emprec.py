@@ -26,6 +26,7 @@ def search():
           data = pickle.load(file)
           for key in data.keys():
               print(key, data[key])
+          print()
     except:
         print("No record found with the id", eno)
         print()
