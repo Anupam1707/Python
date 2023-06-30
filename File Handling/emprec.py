@@ -1,10 +1,11 @@
 import pickle
-try:
-    with open("EmpRec.bin", "rb") as file:
-        pass
-except :
-    with open("EmpRec.bin", "wb") as file
-        pass
+def start():
+    try:
+        with open("EmpRec.bin", "rb") as file:
+            pass
+    except :
+        with open("EmpRec.bin", "wb") as file
+            pass
     
 def entry():
     empno = int(input("Enter Employee Number : "))
