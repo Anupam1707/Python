@@ -42,7 +42,7 @@ def report():
                 data = pickle.load(file)
                 sum += data["Salary"]
     except:
-        pass
+        print("Total Salary is",sum)
     
 def main():
     print("1. Give an Entry\n2. Update an Entry\n3. Search an Entry\nGenerate Report")
