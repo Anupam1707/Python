@@ -35,6 +35,14 @@ def search():
             break
       
 def report():
+    sum = 0
+    try:
+        with open("EmpRec.bin", "rb") as file:
+            while True:
+                data = pickle.load(file)
+                sum += data["Salary"]
+    except:
+        pass
     
 def main():
     print("1. Give an Entry\n2. Update an Entry\n3. Search an Entry\nGenerate Report")
