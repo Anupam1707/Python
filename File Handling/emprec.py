@@ -45,6 +45,7 @@ def report():
         print("Total Salary is",sum)
     
 def main():
+    start()
     print("1. Give an Entry\n2. Update an Entry\n3. Search an Entry\nGenerate Report")
     choice = int(input("Enter an Option : "))
     while True:
