@@ -15,6 +15,8 @@ def entry():
     inp = {"No":empno, "Name":name, "Designation":designation, "Salary":salary}
     with open("EmpRec.bin","ab") as file:
         pickle.dump(inp, file)
+    print("Successfully Entered")
+    print()
 
 def search():
     eno = int(input("Enter the Employee Number : "))
@@ -26,14 +28,7 @@ def search():
               print(key, data[key])
     except:
         print("No record found with the id", eno)
-        print("Do you want to enter any record? (y or n)")
-        choice = str(input()
-        if choice == "y":
-            start()
-            entry()
-        else :
-            break
-      
+        print()
 def report():
     sum = 0
     try:
@@ -43,6 +38,7 @@ def report():
                 sum += data["Salary"]
     except:
         print("Total Salary is",sum)
+        print()
     
 def main():
     start()
