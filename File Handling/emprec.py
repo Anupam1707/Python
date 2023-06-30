@@ -21,8 +21,17 @@ def search():
         with open("EmpRec.bin","rb") as file:
           file.seek(eno)
           data = pickle.load(file)
+          for key in data.keys():
+              print(key, data[key])
     except:
-        pass
+        print("No record found with the id", eno)
+        print("Do you want to enter any record? (y or n)")
+        choice = str(input()
+        if choice == "y":
+            entry()
+        else :
+            break
+      
 def report():
     
 def main():
