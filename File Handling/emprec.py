@@ -29,6 +29,7 @@ def search():
         print("Do you want to enter any record? (y or n)")
         choice = str(input()
         if choice == "y":
+            start()
             entry()
         else :
             break
