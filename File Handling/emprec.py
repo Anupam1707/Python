@@ -1,17 +1,45 @@
 import pickle
+
 def menu():
     print("1. Give an Entry\n2. Update an Entry\n3. Search an Entry\n4. Generate Report")
     choice = int(input("Enter an Option : "))
+    if choice == 1:
+            entry()
+    elif choice == 2:
+            update()
+    elif choice == 3:
+            search()
+    elif choice == 4:
+            report()
+    else:
+            exit()
+            
+def up_menu():
+    print("1. Update Name of Employee\n2. Update Designation of Employee\n3. Update Salary of Employee")
+    choice = int(input("Enter your choice : "))
+    if choice == 1:
+        choice = "Name"
+    elif choice == 2:
+        choice = "Designation"
+    elif choice == 3:
+        choice = "Salary"
+    else:
+        print("Please try again")
+        up_menu()
     return choice
 
 def start():
     try:
         with open("EmpRec.dat", "rb") as file:
             pass
-    except :
+        print("File Found")
+        print()
+    except FileNotFoundError:
         with open("EmpRec.dat", "wb") as file:
             pass
-    
+        print("New file created")
+        print()
+        
 def entry():
     empno = int(input("Enter Employee Number : "))
     name = str(input("Enter the name of Employee : "))
@@ -26,6 +54,7 @@ def entry():
     
 def search():
     eno = int(input("Enter the Employee Number : "))
+    print()
     try:
         with open("EmpRec.dat","rb") as file:
           for i in range(eno):
@@ -39,6 +68,7 @@ def search():
         print("No record found with the id", eno)
         print()
         main()
+        
 def report():
     sum = 0
     try:
@@ -49,19 +79,28 @@ def report():
     except:
         print("Total Salary is",sum)
         print()
-    
+
+def update():
+    eno = int(input("Enter the Employee Number : "))
+    print()
+    try:
+        with open("EmpRec.dat", "rb") as file:
+            for i in range(eno):
+                data  = pickle.load(file)
+            file.seek(0)
+            updt = up_menu()
+            val = str(input("Enter the new value : "))
+            if updt == "Salary":
+                val = int(val)
+            data[updt] = val
+            for i in range(eno-1):
+                temp = pickle.load(file)
+            pickle.dump(data, file)
+    except:
+        print("None")
+            
 def main():
     start()
-    choice = menu()
     while True:
-        if choice == 1:
-            entry()
-        elif choice == 2:
-            update()
-        elif choice == 3:
-            search()
-        elif choice == 4:
-            report()
-        else:
-            break
+        menu()
 main()
