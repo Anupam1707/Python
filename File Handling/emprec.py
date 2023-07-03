@@ -1,4 +1,6 @@
 import pickle
+import os
+import time
 
 inp = {}
 
@@ -54,7 +56,6 @@ def entry():
         pickle.dump(inp, file)
     print("Successfully Entered")
     print()
-    main()
     
 def search():
     eno = int(input("Enter the Employee Number : "))
@@ -71,7 +72,6 @@ def search():
     except:
         print("No record found with the id", eno)
         print()
-        main()
         
 def report():
     print("Emp No\tName\tDesignation\tSalary")
@@ -86,28 +86,31 @@ def report():
         print("Total Salary is",sum)
         print()
 
-def delrec():
+def update():
     eno = int(input("Enter Employee Number : "))
     new = open("TempEmpRec.dat","wb")
     old = open("EmpRec.dat","rb")
     
-def update():
+def delrec():
     eno = int(input("Enter the Employee Number : "))
     print()
     try:
         with open("EmpRec.dat", "rb+") as file:
-            file.seek(-len(,2)
-            data = pickle.load(file)
-            no = data["No"]
-            file.seek(0)
-            if no <= eno:
-                with open("TempEmpRec.dat","wb") as new:
-                    
-            
+            while True:
+                data = pickle.load(file)
+                no = data["No"]
+                if no <= eno and no != eno:
+                    with open("TempEmpRec.dat","ab") as new:
+                        pickle.dump(data, new)
+        
     except:
         print("None")
+        os.rename("TempEmpRec.dat", "NewEmpRec.dat")
+        time.sleep(1)
+        os.remove("EmpRec.dat")
+        time.sleep(1)
+        os.rename("NewEmpRec.dat","EmpRec.dat")
         print()
-        main()
             
 def main():
     start()
