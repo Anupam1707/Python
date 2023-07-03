@@ -1,5 +1,7 @@
 import pickle
 
+inp = {}
+
 def menu():
     print("1. Give an Entry\n2. Update an Entry\n3. Search an Entry\n4. Generate Report\n5. Delete Record")
     choice = int(input("Enter an Option : "))
@@ -78,7 +80,7 @@ def report():
         with open("EmpRec.dat", "rb") as file:
             while True:
                 data = pickle.load(file)
-                print(str(data["No"]) +"\t" + data["Name"] + "\t" + data["Designation"] + "\t" + str(data['Salary']))
+                print(str(data["No"]) +"\t" + data["Name"] + "\t" + data["Designation"] + "\t\t" + str(data['Salary']))
                 sum += data["Salary"]
     except:
         print("Total Salary is",sum)
@@ -88,25 +90,20 @@ def delrec():
     eno = int(input("Enter Employee Number : "))
     new = open("TempEmpRec.dat","wb")
     old = open("EmpRec.dat","rb")
-                
+    
 def update():
     eno = int(input("Enter the Employee Number : "))
     print()
     try:
-        with open("EmpRec.dat", "rb") as file:
-            for i in range(eno):
-                data  = pickle.load(file)
+        with open("EmpRec.dat", "rb+") as file:
+            file.seek(-len(,2)
+            data = pickle.load(file)
+            no = data["No"]
             file.seek(0)
-            updt = up_menu()
-            val = str(input("Enter the new value : "))
-            if updt == "Salary":
-                val = int(val)
-                data[updt] = val
-            for i in range(eno-1):
-                temp = pickle.load(file)
-            pickle.dump(data, file)
-            print()
-            main()
+            if no <= eno:
+                with open("TempEmpRec.dat","wb") as new:
+                    
+            
     except:
         print("None")
         print()
@@ -116,4 +113,5 @@ def main():
     start()
     while True:
         menu()
+
 main()
