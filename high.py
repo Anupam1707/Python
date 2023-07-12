@@ -1,40 +1,14 @@
 def high(num):
-    a = 0
-    s = str(num)
-    ls = list(s)
-    ls.sort()
+    digits = list(str(num))
 
-    def loop(ls, idx):
-        if idx == 0:
-            temp = []
-            temp.append(ls[-1])
-            ls.remove(ls[-1])
-            temp.extend(ls)
-            print(temp)
-            return temp
-        
-        else:
-            temp = []
-            temp.extend(ls[:idx-1])
-            for i in range(idx):
-                ls.remove(ls[i])
-            temp.append(ls[-1])
-            ls.remove(ls[-1])
-            temp.extend(ls)
-            print(temp)
-            return temp
-        
-    n = "".join(loop(ls, a))
-    n = int(n)
-    
-    if n > num:
-            print(n)
-            
-    elif n == num:
-        print("No Higher Number")
- 
-##    else:
-##        while n < num:
-##            n = "".join(loop(ls,a+1))
-##            n = int(n)
-##            print(n)
+    a = len(digits) -2
+    while a >= 0 and digits[a] >= digits[a +1]:
+        a -= 1
+
+    b = len(digits) -1
+    while digits[b] < digits[a]:
+        b -= 1
+
+    digits[a], digits[b] = digits[b], digits[a]
+    n = int("".join(digits))
+    return n
