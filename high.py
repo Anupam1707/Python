@@ -12,3 +12,6 @@ def high(num):
     digits[a], digits[b] = digits[b], digits[a]
     n = int("".join(digits))
     return n
+
+num = int(input("ENter a Number : "))
+print(high(num))
