@@ -14,5 +14,3 @@ for i in profiles:
             print ("{:<30}|  {:<}".format(i, ""))
     except subprocess.CalledProcessError:
         print ("{:<30}|  {:<}".format(i, "ENCODING ERROR"))
-
-input("")
